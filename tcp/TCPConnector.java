@@ -28,7 +28,9 @@ public class TCPConnector implements Client, Connection, Server{
     @Override
     public Connection acceptConnection(int port) throws IOException {
         ServerSocket server = new ServerSocket(port);
+        System.out.println("Waiting for client.");
         this.socket = server.accept();
+        System.out.println("Client connected.");
         return this;
     }
 }
